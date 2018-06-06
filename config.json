@@ -1,0 +1,48 @@
+{
+  "name": "Stanford Webauth",
+
+  "namespace":"Stanford\\Webauth",
+
+  "description": "A module for webauth surveys",
+
+  "versions": [
+    { "0.1": "Initial Development Version" }
+  ],
+
+  "authors": [
+    {
+      "name": "Andy Martin",
+      "email": "andy123@stanford.edu",
+      "institution": "Stanford University"
+    },
+    {
+      "name": "YongJae Lee",
+      "email": "jael@stanford.edu",
+      "institution": "Stanford University"
+    }
+  ],
+
+  "permissions": [
+    "redcap_every_page_top",
+    "redcap_every_page_before_render",
+    "redcap_survey_page_top"
+  ],
+
+  "links": {
+    "control-center": [
+      {
+        "name": "Cleanup Old Webauth",
+        "icon": "gear",
+        "url": "Cleanup.php"
+      }
+    ],
+    "project": [
+    ]
+  },
+
+  "system-settings": [
+  ],
+
+  "project-settings": [
+  ]
+}

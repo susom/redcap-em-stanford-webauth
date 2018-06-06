@@ -1,0 +1,4 @@
+div.webauth-alert-wrapper { display: none; position: fixed; top:0; left:50%; width: 100%; z-index: 1000;}
+div.webauth-alert-wrapper div.alert { position: relative; left:-50%;  border: 2px solid red;}
+div.webauth-alert-wrapper a { text-decoration: none;}
+div.webauth-alert-wrapper strong { font-size: larger; font-weight: bold; }
