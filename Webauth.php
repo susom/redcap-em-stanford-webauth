@@ -202,7 +202,7 @@ class Webauth extends \ExternalModules\AbstractExternalModule
                 echo "<script>webauth.isDev = " . self::isDev() . ";</script>";
 
                 // Add HTML
-                $refresh_url = $this->getUrl("Refresh.php", false, false);
+                $refresh_url = $this->getUrl("Refresh.php", true, false);
                 echo "<script>webauth.refreshUrl = '$refresh_url';</script>";
                 ?>
 
