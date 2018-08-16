@@ -23,7 +23,7 @@
   ],
 
   "no-auth-pages": [
-    "Refresh.php"
+    "Refresh"
   ],
 
   "permissions": [
