@@ -12,7 +12,7 @@ class Webauth extends \ExternalModules\AbstractExternalModule
     /**  HOOKS  **/
     function redcap_every_page_before_render($project_id = null)
     {
-        self::log(PAGE, __FUNCTION__);
+        self::sLog(PAGE, __FUNCTION__);
 
         // Note that we must use the before_render hook here because the POST handling occurs before the every_page_top is called
         $this->updateSurveySettings();
@@ -21,7 +21,7 @@ class Webauth extends \ExternalModules\AbstractExternalModule
 
     function redcap_every_page_top($project_id = null)
     {
-        self::log(PAGE, __FUNCTION__);
+        self::sLog(PAGE, __FUNCTION__);
 
         // When editing the survey settings we need to handle webauth configuration now
         $this->renderSurveySettings();
@@ -33,7 +33,7 @@ class Webauth extends \ExternalModules\AbstractExternalModule
 
     function redcap_survey_page_top($project_id, $record, $instrument, $event_id, $group_id, $survey_hash, $response_id, $repeat_instance)
     {
-        self::log(PAGE, __FUNCTION__);
+        self::sLog(PAGE, __FUNCTION__);
 
         // Enable functionality of webauth in actual surveys
         $this->enableSurveyWebauth($instrument);
@@ -51,7 +51,7 @@ class Webauth extends \ExternalModules\AbstractExternalModule
         // Get all surveys
         $surveys = $this->getProjectSetting(self::$module_key);
         $surveys = empty($surveys) ? array() : $surveys;
-        self::log($surveys, "On getProjectSetting after null");
+        self::sLog($surveys, "On getProjectSetting after null");
         return $surveys;
     }
 
@@ -77,7 +77,7 @@ class Webauth extends \ExternalModules\AbstractExternalModule
 
         // Make it a simple array
         $surveys = array_values($surveys);
-        self::log($surveys, "On saving");
+        self::sLog($surveys, "On saving");
         $this->setProjectSetting(self::$module_key, $surveys);
     }
 
@@ -103,7 +103,7 @@ class Webauth extends \ExternalModules\AbstractExternalModule
             $survey_name = $_GET['page'];
             $webauth_required = (isset($_POST['webauth_required']) && $_POST['webauth_required'] == "on") ? 1 : 0;
 
-            self::log($webauth_required, "webauth required for $survey_name");
+            self::sLog($webauth_required, "webauth required for $survey_name");
             // self::log($_POST);
             $this->editWebauthSurveys($survey_name, $webauth_required);
         }
@@ -265,7 +265,7 @@ class Webauth extends \ExternalModules\AbstractExternalModule
     }
 
 
-    public static function log()
+    public static function sLog()
     {
         if (self::isDev()) {
             if (class_exists("\Plugin")) {
