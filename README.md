@@ -1,4 +1,4 @@
-* REDCap Stanford Survey Authentication *
+# REDCap Stanford Survey Authentication
 
 This external module enables us to force user authentication for surveys designed for institutional users
 It hasn't been updated to reflect the latest in EM designs (logging, readme, etc...)
